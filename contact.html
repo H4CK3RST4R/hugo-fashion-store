@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUGO FASHION STORE - Contact & Commande</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>HUGO FASHION STORES</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="collections.html">Nouvelles Collections</a></li>
+                <li><a href="promotions.html">Promotions</a></li>
+                <li><a href="apropos.html">À Propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="formulaire-commande">
+            <h2>Passer une Commande / Nous Contacter</h2>
+            <p>Remplissez ce formulaire pour toute demande. Tous les champs sont obligatoires.</p>
+
+            <!-- Formulaire avec validations HTML5 obligatoires -->
+            <form action="#" method="POST">
+                
+                <div class="form-group">
+                    <label for="nom">Nom Complet :</label>
+                    <input type="text" id="nom" name="nom" required placeholder="Ex: Votre Nom">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Adresse Électronique :</label>
+                    <input type="email" id="email" name="email" required placeholder="Ex: nom@exemple.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="categorie">Catégorie d'article :</label>
+                    <select id="categorie" name="categorie" required>
+                        <option value="">-- Choisir une option --</option>
+                        <option value="homme">Collection Homme</option>
+                        <option value="femme">Collection Femme</option>
+                        <option value="accessoires">Accessoires</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Détails de votre demande :</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Précisez l'article et la taille souhaitée..."></textarea>
+                </div>
+
+                <button type="submit">Envoyer la demande</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Projet Final HTML/CSS - ITAC. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
