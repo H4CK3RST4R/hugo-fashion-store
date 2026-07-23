@@ -448,3 +448,33 @@ footer {
     border-top: 3px solid #c5a059;
     font-size: 0.9rem;
 }
+
+/* --- ADAPTATION MOBILE (RESPONSIVE) --- */
+@media (max-width: 768px) {
+  /* Aligner et réduire la taille des boutons du menu */
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .navbar a, 
+  .navbar button {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
+
+  /* Ajouter du padding aux titres pour ne pas coller au bord de l'écran */
+  body, 
+  main, 
+  .container, 
+  h1, 
+  h2, 
+  p {
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+  }
+}
