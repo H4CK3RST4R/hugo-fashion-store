@@ -479,36 +479,38 @@ footer {
   }
 }
 
-//* =========================================================
-   STYLE BOUTON HAMBURGER (Taille Boostée & Incontournable)
+/* =========================================================
+   BOUTON HAMBURGER FORCE (TAILLE MAXI ET VISIBLE)
    ========================================================= */
 .menu-toggle {
     display: none;
     flex-direction: column !important;
-    justify-content: space-between !important;
-    width: 45px !important;            /* Taille bien visible */
-    height: 35px !important;           /* Hauteur adaptée */
-    background: transparent !important;
-    border: 2px solid #121212 !important; /* Cadre élégant pour mieux le repérer */
-    border-radius: 6px !important;
+    justify-content: space-around !important;
+    width: 50px !important;             /* Largeur bien grande */
+    height: 45px !important;            /* Hauteur confortable */
+    min-width: 50px !important;         /* Empêche le logo de l'écraser */
+    min-height: 45px !important;
+    background: #121212 !important;     /* Fond noir pour ressortir sur l'entête doré */
+    border: 2px solid #8C6D2D !important;/* Bordure dorée élégante */
+    border-radius: 8px !important;
     cursor: pointer !important;
-    padding: 6px !important;           /* Confort au toucher */
+    padding: 8px !important;
     z-index: 1001 !important;
     box-sizing: border-box !important;
 }
 
 .menu-toggle .bar {
-    height: 4px !important;            /* Épaisseur des traits */
+    height: 4px !important;             /* Épaisseur des traits */
     width: 100% !important;
-    background-color: #121212 !important;
-    border-radius: 2px !important;
+    background-color: #C5A059 !important;/* Couleur dorée des barres */
+    border-radius: 3px !important;
     transition: all 0.3s ease-in-out !important;
     display: block !important;
 }
 
 /* Animation en X au clic */
 .menu-toggle.open .bar:nth-child(1) {
-    transform: translateY(8.5px) rotate(45deg) !important;
+    transform: translateY(10px) rotate(45deg) !important;
 }
 
 .menu-toggle.open .bar:nth-child(2) {
@@ -516,5 +518,5 @@ footer {
 }
 
 .menu-toggle.open .bar:nth-child(3) {
-    transform: translateY(-8.5px) rotate(-45deg) !important;
+    transform: translateY(-10px) rotate(-45deg) !important;
 }
