@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUGO-FASHION STORE | Mode & Accessoires</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Style rapide pour la Section Hero et la grille produits */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('article3.jpg') center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background-color: #d6c360;
+            color: #121212;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .btn-main:hover {
+            background-color: #29f80a;
+        }
+
+        .featured-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .product-box {
+            flex: 0 1 calc(25% - 20px);
+            min-width: 250px;
+            max-width: 300px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <!-- BARRE DE NAVIGATION -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <svg width="220" height="55" viewBox="0 0 220 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Fond du symbole -->
+                <rect x="5" y="5" width="45" height="45" rx="8" fill="#121212" stroke="#8C6D2D" stroke-width="2"/>
+                
+                <!-- Monogramme H & F Stylisé -->
+                <path d="M18 16V39M37 16V39M18 27.5H37" stroke="#C5A059" stroke-width="3.5" stroke-linecap="round"/>
+                <path d="M25 21.5H33M25 27.5H31" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+
+                <!-- Texte HUGO -->
+                <text x="62" y="29" fill="#121212" font-family="'Segoe UI', 'Montserrat', sans-serif" font-weight="900" font-size="20" letter-spacing="3.5">HUGO</text>
+                
+                <!-- Ligne séparatrice -->
+                <line x1="62" y1="34" x2="162" y2="34" stroke="#121212" stroke-width="1.5"/>
+
+                <!-- Sous-titre FASHION STORE -->
+                <text x="62" y="44" fill="#FFFFFF" font-family="'Segoe UI', 'Montserrat', sans-serif" font-weight="700" font-size="8" letter-spacing="2">FASHION STORE</text>
+            </svg>
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="about.html">À Propos</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="collections.html">Nouvelles Collections</a></li>
+                <li><a href="promotions.html">Promotions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- BANNIÈRE PRINCIPALE / HERO SECTION -->
+    <section class="hero">
+        <h1>ÉLÉGANCE & STYLE MODERNE</h1>
+        <p>Découvrez nos pièces exclusives et nos accessoires haut de gamme.</p>
+        <a href="catalogue.html" class="btn-main">Explorer le Catalogue 🛍️</a>
+    </section>
+
+    <main class="container" style="padding: 0 5% 50px 5%;">
+        
+        <!-- SECTION EN VEDETTE -->
+        <section style="text-align: center; margin-bottom: 50px;">
+            <h2 style="font-size: 2rem; margin-bottom: 10px;">Produits en Vedette</h2>
+            <p style="color: #e0e0e0; margin-bottom: 30px;">Un aperçu de notre meilleure sélection du moment.</p>
+
+            <div class="featured-grid">
+                
+                <!-- Article 1 -->
+                <div class="product-box">
+                    <img src="article1.jpg" alt="Veste Oversize Noir Intense" class="product-img">
+                    <a href="article1.jpg" target="_blank" class="btn-more">Voir l'image complète </a>
+                    <h3>Veste Oversize Noir Intense</h3>
+                    <p>Coupe ajustée et finitions soignées.</p>
+                    <p class="price">110.00 USD</p>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="product-box">
+                    <img src="article2.jpg" alt="Veste Tailleur Structurée" class="product-img">
+                    <a href="article2.jpg" target="_blank" class="btn-more">Voir l'image complète</a>
+                    <h3>Veste Tailleur Structurée</h3>
+                    <p>Style moderne pour un look affirmé.</p>
+                    <p class="price">125.00 USD</p>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="product-box">
+                    <img src="article3.jpg" alt="Ensemble Tailleur Moderne" class="product-img">
+                    <a href="article3.jpg" target="_blank" class="btn-more">Voir l'image complète</a>
+                    <h3>Ensemble Tailleur Moderne</h3>
+                    <p>Élégance sobre et tissu haut de gamme.</p>
+                    <p class="price">145.00 USD</p>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="product-box">
+                    <img src="article12.jpg"  alt="Montre Chrono Noir Mat" class="product-img">
+                    <a href="article12.jpg" target="_blank" class="btn-more">Voir l'image complète</a>
+                    <h3>Montre Chrono Noir Mat</h3>
+                    <p>Cadran acier et mouvement de précision.</p>
+                    <p class="price">150.00 USD</p>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 35px;">
+                <a href="catalogue.html" class="btn-main">Voir tous les articles →</a> 
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 hugo-fashion store tous droits réservés.</p>
+    </footer>
+</body>
+</html>

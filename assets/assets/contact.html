@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Commandes | HUGO-FASHION STORE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR UNIQUE ET PROPRE -->
+    <header class="navbar">
+        <!-- LOGO SVG HUGO -->
+        <a href="index.html" class="logo">
+            <svg width="240" height="60" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Fond du symbole -->
+                <rect x="5" y="5" width="50" height="50" rx="8" fill="#121212" stroke="#8C6D2D" stroke-width="2"/>
+                
+                <!-- Monogramme H & F Stylisé -->
+                <path d="M20 18V42M40 18V42M20 30H40" stroke="#C5A059" stroke-width="3.5" stroke-linecap="round"/>
+                <path d="M28 24H36M28 30H34" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+
+                <!-- Texte HUGO -->
+                <text x="68" y="33" fill="#121212" font-family="'Segoe UI', 'Montserrat', sans-serif" font-weight="900" font-size="22" letter-spacing="4">HUGO</text>
+                
+                <!-- Ligne séparatrice -->
+                <line x1="68" y1="39" x2="168" y2="39" stroke="#121212" stroke-width="1.5"/>
+
+                <!-- Sous-titre FASHION STORE -->
+                <text x="68" y="49" fill="#FFFFFF" font-family="'Segoe UI', 'Montserrat', sans-serif" font-weight="700" font-size="8.5" letter-spacing="3">FASHION STORE</text>
+            </svg>
+        </a>
+
+        <!-- MENU DE NAVIGATION -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À Propos</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="collections.html">Nouvelles Collections</a></li>
+                <li><a href="promotions.html">Promotions</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page-header">
+            <h1>Contactez-Nous & Passez Commande</h1>
+            <p>Retrouvez nos coordonnées directes ou remplissez le formulaire ci-dessous.</p>
+        </section>
+
+        <!-- BLOC EMAIL & BOUTON WHATSAPP -->
+        <section class="card" style="max-width: 600px; margin: 0 auto 30px auto; text-align: center;">
+            <h2 style="margin-bottom: 15px;">Nos Contacts Directs</h2>
+            <p style="margin-bottom: 20px;"><strong>📧 Email :</strong> bataillejohnson@gmail.com</p>
+            
+            <!-- BOUTON WHATSAPP -->
+            <a href="https://wa.me/50939322092" target="_blank" class="btn" style="display: inline-flex; align-items: center; gap: 10px; background-color: #25d366; border-color: #121212;">
+                💬 Discuter sur WhatsApp (+509 3932-2091)
+            </a>
+        </section>
+
+        <!-- FORMULAIRE DE CONTACT -->    
+        <section class="form-container">
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="fullname">Nom Complet</label>
+                    <input type="text" id="fullname" name="fullname" required placeholder="Votre nom complet">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Adresse Email</label>
+                    <input type="email" id="email" name="email" required placeholder="votre.email@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Numéro de Téléphone</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+509 0000 0000">
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Catégorie de Demande</label>
+                    <select id="category" name="category" required>
+                        <option value="">-- Sélectionnez une option --</option>
+                        <option value="commande">Passer une commande</option>
+                        <option value="information">Demande d'information</option>
+                        <option value="partenariat">Proposition de partenariat</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="size">Taille / Pointure (si commande)</label>
+                    <select id="size" name="size">
+                        <option value="N/A">Non applicable</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Votre Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Précisez votre demande ou les détails du produit..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Envoyer le Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 hugo-fashion store tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
