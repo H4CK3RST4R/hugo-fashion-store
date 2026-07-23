@@ -1,1 +1,0 @@
-# itac-Projet-Final-Store-mode
