@@ -479,39 +479,42 @@ footer {
   }
 }
 
-/* =========================================================
-   STYLE BOUTON HAMBURGER (AGRANDI ET PLUS LISIBLE)
+//* =========================================================
+   STYLE BOUTON HAMBURGER (Taille Boostée & Incontournable)
    ========================================================= */
 .menu-toggle {
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 40px;            /* Largeur du bouton */
-    height: 28px;           /* Hauteur du bouton */
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 5px;           /* Zone de clic améliorée */
-    z-index: 1001;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 45px !important;            /* Taille bien visible */
+    height: 35px !important;           /* Hauteur adaptée */
+    background: transparent !important;
+    border: 2px solid #121212 !important; /* Cadre élégant pour mieux le repérer */
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    padding: 6px !important;           /* Confort au toucher */
+    z-index: 1001 !important;
+    box-sizing: border-box !important;
 }
 
 .menu-toggle .bar {
-    height: 4px;            /* Épaisseur des 3 barres */
-    width: 100%;
-    background-color: #121212;
-    border-radius: 3px;
-    transition: all 0.3s ease-in-out;
+    height: 4px !important;            /* Épaisseur des traits */
+    width: 100% !important;
+    background-color: #121212 !important;
+    border-radius: 2px !important;
+    transition: all 0.3s ease-in-out !important;
+    display: block !important;
 }
 
-/* Animation de fermeture (transforme le hamburger en X au clic) */
+/* Animation en X au clic */
 .menu-toggle.open .bar:nth-child(1) {
-    transform: translateY(12px) rotate(45deg);
+    transform: translateY(8.5px) rotate(45deg) !important;
 }
 
 .menu-toggle.open .bar:nth-child(2) {
-    opacity: 0;
+    opacity: 0 !important;
 }
 
 .menu-toggle.open .bar:nth-child(3) {
-    transform: translateY(-12px) rotate(-45deg);
+    transform: translateY(-8.5px) rotate(-45deg) !important;
 }
