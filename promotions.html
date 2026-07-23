@@ -48,63 +48,73 @@
 
         <section>
             <h2>Tableau Récapitulatif des Réductions</h2>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Catégorie</th>
-                        <th>Produit en Promotion</th>
-                        <th>Ancien Prix</th>
-                        <th>Nouveau Prix</th>
-                        <th>Économie</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Habillement</td>
-                        <td>Veste Tailleur Structurée</td>
-                        <td>210.00 USD</td>
-                        <td>167.70</td>
-                        <td>-25 USD</td>
-                    </tr>
-                    <tr>
-                        <td>Accessoires</td>
-                        <td>Montre Minimaliste Chrono</td>
-                        <td>130.00 USD</td>
-                        <td>99.00 USD</td>
-                        <td>-31 USD</td>
-                    </tr>
-                    <tr>
-                        <td>Chaussures</td>
-                        <td>Bottines Hautes Cuir</td>
-                        <td>155.00 USD</td>
-                        <td>123.50 USD</td>
-                        <td>-30 USD</td>
-                    </tr>
-                </tbody>
-            </table>
+            
+            <!-- DEBUT DU WRAPPER RESPONSIVE POUR CAPTER LE DEBORDEMENT -->
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Catégorie</th>
+                            <th>Produit en Promotion</th>
+                            <th>Ancien Prix</th>
+                            <th>Nouveau Prix</th>
+                            <th>Économie</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Habillement</td>
+                            <td>Veste Tailleur Structurée</td>
+                            <td>210.00 USD</td>
+                            <td>167.70 USD</td>
+                            <td>-25 USD</td>
+                        </tr>
+                        <tr>
+                            <td>Accessoires</td>
+                            <td>Montre Minimaliste Chrono</td>
+                            <td>130.00 USD</td>
+                            <td>99.00 USD</td>
+                            <td>-31 USD</td>
+                        </tr>
+                        <tr>
+                            <td>Chaussures</td>
+                            <td>Bottines Hautes Cuir</td>
+                            <td>155.00 USD</td>
+                            <td>123.50 USD</td>
+                            <td>-30 USD</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- FIN DU WRAPPER RESPONSIVE -->
+
         </section>
 
         <section style="margin-top: 40px;">
             <h2>Produits en Solde</h2>
             <div class="grid-3">
+                
                 <div class="product-box promo-card">
                     <span class="badge">-23%</span>
-                    <div class="article2.jpg">PROMO 1</div>
+                    <img src="article2.jpg" alt="Veste Tailleur Structurée" class="product-img">
                     <h3>Veste Tailleur Structurée</h3>
-                    <p class="price"><del>210.00 USD</del> <strong>167.7</strong></p>
+                    <p class="price"><del>210.00 USD</del> <strong>167.70 USD</strong></p>
                 </div>
+
                 <div class="product-box promo-card">
                     <span class="badge">-24%</span>
-                    <div class="article12.jpg">PROMO 2</div>
+                    <img src="article12.jpg" alt="Montre Minimaliste Chrono" class="product-img">
                     <h3>Montre Minimaliste Chrono</h3>
                     <p class="price"><del>130.00 USD</del> <strong>99.00 USD</strong></p>
                 </div>
+
                 <div class="product-box promo-card">
                     <span class="badge">-21%</span>
-                    <div class="article19.jpg">PROMO 3</div>
+                    <img src="article19.jpg" alt="Bottines Hautes Cuir" class="product-img">
                     <h3>Bottines Hautes Cuir</h3>
                     <p class="price"><del>140.00 USD</del> <strong>110.00 USD</strong></p>
                 </div>
+
             </div>
         </section>
     </main>

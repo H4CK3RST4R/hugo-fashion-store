@@ -203,6 +203,8 @@ nav a[href*="collections"] {
 .container {
     padding: 40px 5%;
     min-height: 80vh;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .page-header {
@@ -246,6 +248,7 @@ nav a[href*="collections"] {
     transition: transform 0.3s ease, border-color 0.3s ease;
     position: relative;
     box-sizing: border-box;
+    overflow: hidden; /* Empêche le contenu de déborder de la carte */
 }
 
 .product-card:hover, .card-product:hover, .product-box:hover {
@@ -285,10 +288,20 @@ nav a[href*="collections"] {
     box-shadow: 0 0 12px rgba(253, 253, 253, 0.25);
 }
 
-.data-table, .styled-table {
-    width: 100%;
-    border-collapse: collapse;
+/* Wrapper pour défilement horizontal du tableau */
+.table-responsive {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    display: block;
     margin: 20px 0;
+}
+
+.table-responsive table, .data-table, .styled-table {
+    width: 100%;
+    min-width: 600px; /* Force la largeur minimale pour garder un beau tableau */
+    border-collapse: collapse;
     font-size: 0.9em;
     background-color: rgba(18, 18, 18, 0.85);
     color: #ffffff;
@@ -310,16 +323,6 @@ nav a[href*="collections"] {
     background-color: #c5a059 !important;
     color: #121212 !important;
     font-weight: bold;
-}
-
-.table-responsive {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-.table-responsive table {
-    min-width: 550px;
 }
 
 .contact-form-container, form, .form-container {
@@ -460,13 +463,21 @@ footer {
         text-align: center;
     }
 
-    /* FIXE DU CATALOGUE & DES GRILLES SUR MOBILE */
+    /* FIX DEFINITIF PORTRAIT MOBILE EN FLEXBOX STACK */
     .grid-3, .featured-grid, .product-grid, .collections-grid, .catalogue-grid, .grid-2 {
-        grid-template-columns: 1fr !important; /* Force 1 seule colonne */
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
         gap: 20px !important;
     }
 
+    .card, .product-card, .card-product, .product-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+
     .container {
-        padding: 20px 15px !important;
+        padding: 20px 12px !important;
     }
 }
