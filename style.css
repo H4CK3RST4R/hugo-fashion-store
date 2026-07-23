@@ -434,3 +434,38 @@ footer {
         text-align: center;
     }
 }
+
+
+/* Configuration générale des tableaux */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.9em;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+/* Quadrillage des entêtes (th) */
+.styled-table thead tr {
+  background-color: #c59b27; /* Doré */
+  color: #000000;
+}
+
+.styled-table th, 
+.styled-table td {
+  padding: 12px 15px;
+  border: 1px solid #c59b27; /* Crée le quadrillage complet */
+  text-align: center;
+}
+
+/* Rendre le tableau responsive sur téléphone */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive table {
+  min-width: 550px; /* Assure que le tableau ne soit pas écrasé */
+}
