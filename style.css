@@ -479,75 +479,39 @@ footer {
   }
 }
 
-//* =========================================================
-   STYLE DU BOUTON HAMBURGER ET MENU MOBILE
+/* =========================================================
+   STYLE BOUTON HAMBURGER (AGRANDI ET PLUS LISIBLE)
    ========================================================= */
-
-/* Masqué par défaut sur les grands écrans (PC) */
 .menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 1000;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;            /* Largeur du bouton */
+    height: 28px;           /* Hauteur du bouton */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;           /* Zone de clic améliorée */
+    z-index: 1001;
 }
 
 .menu-toggle .bar {
-  height: 3px;
-  width: 100%;
-  background-color: #121212;
-  border-radius: 2px;
-  transition: all 0.3s ease;
+    height: 4px;            /* Épaisseur des 3 barres */
+    width: 100%;
+    background-color: #121212;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
 }
 
-/* --- RESPONSIVE MOBILE --- */
-@media (max-width: 768px) {
-  header.navbar, .navbar {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    position: relative;
-    padding: 15px 20px !important;
-  }
+/* Animation de fermeture (transforme le hamburger en X au clic) */
+.menu-toggle.open .bar:nth-child(1) {
+    transform: translateY(12px) rotate(45deg);
+}
 
-  /* Afficher le bouton hamburger en haut à droite */
-  .menu-toggle {
-    display: flex !important;
-  }
+.menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+}
 
-  /* Cacher le menu sous forme de tiroir déroulant */
-  .navbar nav {
-    display: none; /* Crayonné / Masqué au départ */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #c5a059;
-    border-bottom: 3px solid #8c6d2d;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-    padding: 15px 0;
-    z-index: 999;
-  }
-
-  /* Classe activée via JS au clic sur l'icône */
-  .navbar nav.active {
-    display: block !important;
-  }
-
-  .navbar nav ul {
-    flex-direction: column !important;
-    gap: 10px !important;
-    padding: 0 20px !important;
-  }
-
-  .navbar nav ul li a {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
+.menu-toggle.open .bar:nth-child(3) {
+    transform: translateY(-12px) rotate(-45deg);
 }
