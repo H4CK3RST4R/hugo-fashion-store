@@ -479,94 +479,75 @@ footer {
   }
 }
 
-/* =========================================================
-   8. ADAPTATION MOBILE (RESPONSIVE DESIGN CORRIGÉ)
+//* =========================================================
+   STYLE DU BOUTON HAMBURGER ET MENU MOBILE
    ========================================================= */
 
-/* Sécurité anti-débordement global */
-html, body {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
+/* Masqué par défaut sur les grands écrans (PC) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000;
 }
 
+.menu-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #121212;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* --- RESPONSIVE MOBILE --- */
 @media (max-width: 768px) {
+  header.navbar, .navbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    position: relative;
+    padding: 15px 20px !important;
+  }
 
-    /* --- 1. NAVBAR MOBILE --- */
-    header.navbar, .navbar {
-        flex-direction: column !important;
-        align-items: center !important;
-        padding: 15px 10px !important;
-        gap: 15px !important;
-    }
+  /* Afficher le bouton hamburger en haut à droite */
+  .menu-toggle {
+    display: flex !important;
+  }
 
-    .navbar nav {
-        width: 100%;
-    }
+  /* Cacher le menu sous forme de tiroir déroulant */
+  .navbar nav {
+    display: none; /* Crayonné / Masqué au départ */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #c5a059;
+    border-bottom: 3px solid #8c6d2d;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    padding: 15px 0;
+    z-index: 999;
+  }
 
-    /* Permet aux boutons du menu de s'aligner proprement en grilles/lignes fluides */
-    .navbar nav ul {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 8px !important;
-        width: 100% !important;
-    }
+  /* Classe activée via JS au clic sur l'icône */
+  .navbar nav.active {
+    display: block !important;
+  }
 
-    .navbar nav ul li {
-        flex: 1 1 auto; /* Ajuste la taille des boutons dynamiquement */
-        text-align: center;
-    }
+  .navbar nav ul {
+    flex-direction: column !important;
+    gap: 10px !important;
+    padding: 0 20px !important;
+  }
 
-    .navbar nav ul li a, nav a {
-        width: 100%;
-        text-align: center;
-        font-size: 0.85rem !important;
-        padding: 8px 10px !important;
-        white-space: nowrap; /* Empêche le texte du bouton de se couper bizarrement */
-    }
-
-    /* --- 2. HERO SECTION --- */
-    .hero {
-        margin: 15px 10px !important;
-        padding: 40px 15px !important;
-    }
-
-    .hero h1 {
-        font-size: 1.6rem !important;
-    }
-
-    .hero p {
-        font-size: 0.95rem !important;
-    }
-
-    /* --- 3. CONTENEURS ET GRILLES --- */
-    .container {
-        padding: 20px 10px !important;
-    }
-
-    /* Passage en 1 colonne sur petit écran pour éviter les écrasements */
-    .grid-3, .grid-2, .product-grid, .collections-grid {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
-    }
-
-    /* --- 4. TABLEAUX (GUIDE DES TAILLES / PROMOTIONS) --- */
-    /* Empêche le tableau de déformer la page */
-    .data-table {
-        display: block !important;
-        width: 100% !important;
-        overflow-x: auto !important;
-        white-space: nowrap !important;
-    }
-
-    .data-table th, .data-table td {
-        padding: 8px 10px !important;
-        font-size: 0.85rem !important;
-    }
-
-    /* --- 5. FORMULAIRES --- */
-    .contact-form-container, form, .form-container {
-        width: 100% !important;
-        padding: 15px !important;
-    }
+  .navbar nav ul li a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
 }

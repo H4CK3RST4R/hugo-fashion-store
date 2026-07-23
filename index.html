@@ -55,6 +55,95 @@
             max-width: 300px;
             box-sizing: border-box;
         }
+
+        /* =========================================================
+           STYLE BOUTON HAMBURGER ET NAVIGATION MOBILE
+           ========================================================= */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 22px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .menu-toggle .bar {
+            height: 3px;
+            width: 100%;
+            background-color: #121212;
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Animation X quand le menu est ouvert */
+        .menu-toggle.open .bar:nth-child(1) {
+            transform: translateY(9.5px) rotate(45deg);
+        }
+
+        .menu-toggle.open .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.open .bar:nth-child(3) {
+            transform: translateY(-9.5px) rotate(-45deg);
+        }
+
+        /* Adaptation Mobile */
+        @media (max-width: 768px) {
+            header.navbar, .navbar {
+                position: relative;
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 15px 20px !important;
+            }
+
+            .menu-toggle {
+                display: flex !important; /* Visible sur mobile */
+            }
+
+            .navbar nav {
+                display: none; /* Caché par défaut sur mobile */
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #c5a059;
+                border-bottom: 3px solid #8c6d2d;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+                padding: 20px 0;
+                z-index: 1000;
+            }
+
+            /* Classe ajoutée par JS au clic */
+            .navbar nav.active {
+                display: block !important;
+            }
+
+            .navbar nav ul {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 12px !important;
+                padding: 0 20px !important;
+                margin: 0 !important;
+            }
+
+            .navbar nav ul li {
+                width: 100%;
+            }
+
+            .navbar nav ul li a {
+                display: block !important;
+                width: 100% !important;
+                text-align: center !important;
+                background-color: rgba(18, 18, 18, 0.05);
+            }
+        }
     </style>
 </head>
 <body>
@@ -80,7 +169,15 @@
             </svg>
         </a>
 
-        <nav>
+        <!-- BOUTON HAMBURGER MOBILE -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <!-- MENU DE NAVIGATION -->
+        <nav id="navMenu">
             <ul>
                 <li><a href="index.html" class="active">Accueil</a></li>
                 <li><a href="about.html">À Propos</a></li>
@@ -157,5 +254,16 @@
     <footer>
         <p>&copy; 2026 hugo-fashion store tous droits réservés.</p>
     </footer>
+
+    <!-- SCRIPT JAVASCRIPT DE DÉCLENCHEMENT DU MENU -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
