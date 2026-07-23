@@ -1,17 +1,12 @@
 /* =========================================================
    1. RESET ET STYLES GÉNÉRAUX
    ========================================================= */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-/* =========================================================
-   FOND DE PAGE EN PLEIN ÉCRAN AVEC IMAGE ET OVERLAY
-   ========================================================= */
 
 body {
     margin: 0;
@@ -28,9 +23,8 @@ body {
 }
 
 /* =========================================================
-   2. BARRE DE NAVIGATION (NAVBAR) EN OR
+   2. BARRE DE NAVIGATION (NAVBAR)
    ========================================================= */
-
 header.navbar, .navbar {
     background-color: #c5a059 !important;
     border-bottom: 3px solid #8c6d2d !important;
@@ -38,6 +32,7 @@ header.navbar, .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .navbar .logo {
@@ -46,10 +41,6 @@ header.navbar, .navbar {
     letter-spacing: 2px;
     color: #121212 !important;
     text-decoration: none;
-}
-
-.navbar .logo span {
-    color: #ffffff !important;
 }
 
 .navbar nav ul {
@@ -61,7 +52,6 @@ header.navbar, .navbar {
     padding: 0;
 }
 
-/* Base pour tous les liens du menu */
 .navbar nav ul li a, nav a {
     display: inline-block;
     padding: 8px 16px;
@@ -74,20 +64,13 @@ header.navbar, .navbar {
     transition: all 0.3s ease;
 }
 
-/* Effet au survol (Hover) et pour la page active (Active) */
 .navbar nav ul li a:hover,
 .navbar nav ul li a.active {
     background-color: rgba(18, 18, 18, 0.1);
     border-color: #121212;
 }
 
-.navbar nav ul li a[href*="index"]:hover,
-.navbar nav ul li a[href*="about"]:hover {
-    color: #121212 !important;
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Liens : CATALOGUE et NOUVELLES COLLECTIONS CASÉS EN OR */
+/* Liens stylisés */
 .navbar nav ul li a[href*="catalogue"],
 .navbar nav ul li a[href*="collections"],
 nav a[href*="catalogue"],
@@ -103,55 +86,102 @@ nav a[href*="collections"] {
     color: #ffffff !important;
 }
 
-/* Liens : PROMOTIONS et CONTACT */
-.navbar nav ul li a[href*="promotions"],
-.navbar nav ul li a[href*="contact"],
-nav a[href*="promotions"],
-nav a[href*="contact"] {
-    color: #121212 !important;
+/* =========================================================
+   BOUTON HAMBURGER (SOMBRE & VISIBLE SUR MOBILE)
+   ========================================================= */
+.menu-toggle {
+    display: none;
+    flex-direction: column !important;
+    justify-content: space-around !important;
+    width: 50px !important;
+    height: 45px !important;
+    min-width: 50px !important;
+    min-height: 45px !important;
+    background: #121212 !important;
+    border: 2px solid #8C6D2D !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    padding: 8px !important;
+    z-index: 1001 !important;
+    box-sizing: border-box !important;
+}
+
+.menu-toggle .bar {
+    height: 4px !important;
+    width: 100% !important;
+    background-color: #C5A059 !important;
+    border-radius: 3px !important;
+    transition: all 0.3s ease-in-out !important;
+    display: block !important;
+}
+
+/* Animation de transformation en X */
+.menu-toggle.open .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg) !important;
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+    opacity: 0 !important;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg) !important;
 }
 
 /* =========================================================
-   3. SECTION ACCUEIL (HERO) ENCADRÉE EN OR
+   3. SECTION ACCUEIL (HERO) PARFAITEMENT CENTRÉE & RESPONSIVE
    ========================================================= */
-
 .hero {
     background-color: #121212;
     color: #ffffff;
+    
+    /* Centrage Flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 70px 20px;
+    
+    min-height: 65vh;
+    padding: 60px 20px;
     border: 4px solid #c5a059 !important;
-    margin: 20px 5%;
+    margin: 30px 5%;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
+    box-sizing: border-box;
 }
 
 .hero h1 {
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.2;
     letter-spacing: 1px;
     margin-bottom: 15px;
     color: #ffffff;
+    max-width: 850px;
 }
 
 .hero p {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.5;
     color: #e0e0e0;
     margin-bottom: 25px;
+    max-width: 600px;
 }
 
-.hero .btn {
+.hero .btn, .btn-main {
     display: inline-block;
     background-color: #c5a059 !important;
     color: #121212 !important;
-    padding: 12px 25px;
+    padding: 12px 30px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 4px;
+    border-radius: 5px;
     border: 1px solid #8c6d2d;
     transition: all 0.3s ease;
 }
 
-.hero .btn:hover {
+.hero .btn:hover, .btn-main:hover {
     background-color: #e5b869 !important;
     transform: scale(1.03);
 }
@@ -159,7 +189,6 @@ nav a[href*="contact"] {
 /* =========================================================
    4. CONTENEUR & GRILLES PRODUITS
    ========================================================= */
-
 .container {
     padding: 40px 5%;
     min-height: 80vh;
@@ -170,9 +199,7 @@ nav a[href*="contact"] {
     margin-bottom: 40px;
 }
 
-.page-header h1, 
-.page-header h2,
-h1 {
+.page-header h1, .page-header h2, h1 {
     color: #ffffff !important;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
@@ -182,51 +209,51 @@ h1 {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-.grid-3 {
+.grid-3, .featured-grid, .product-grid, .collections-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .grid-2 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 25px;
     align-items: center;
 }
 
-/* =========================================================
-   BLOC CONTACTS DIRECTS (FOND SOMBRE)
-   ========================================================= */
-
-.card {
-    background-color: #1a1a1a !important;
-    border: 2px solid #333333 !important;
-    color: #ffffff !important;
-    border-radius: 8px;
-    padding: 25px !important;
+/* Blocs cartes & produits */
+.card, .product-card, .card-product, .product-box {
+    background: rgba(18, 18, 18, 0.85) !important;
+    border: 1.5px solid #8C6D2D !important;
+    border-radius: 12px;
+    padding: 20px !important;
+    text-align: left;
+    backdrop-filter: blur(8px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    position: relative;
 }
 
-.card h2, 
-.card p, 
-.card strong {
-    color: #ffffff !important;
+.product-card:hover, .card-product:hover, .product-box:hover {
+    transform: translateY(-5px);
+    border-color: #C5A059 !important;
 }
 
-/* =========================================================
-   IMAGES PRODUITS & PRIX
-   ========================================================= */
+.product-card h3, .card-product h3, .product-box h3 {
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
 
-.product-box img, 
-.product-img {
+.product-box img, .product-img {
     width: 100% !important;
     max-width: 100% !important;
     height: 200px !important;
     object-fit: cover !important;
     display: block;
-    border-radius: 4px;
+    border-radius: 6px;
     margin-bottom: 15px;
 }
 
@@ -238,14 +265,9 @@ h1 {
 }
 
 /* =========================================================
-   5. INTERFACE DES OFFRES & PROMOTIONS (CADRE EN OR)
+   5. OFFRES, TABLEAUX & FORMULAIRES
    ========================================================= */
-
-.promotions-container, 
-.promo-section, 
-.offers-block,
-.promo-card,
-.data-table {
+.promotions-container, .promo-section, .offers-block, .promo-card, .data-table {
     border: 3px solid #c5a059 !important;
     border-radius: 8px;
     box-shadow: 0 0 12px rgba(253, 253, 253, 0.25);
@@ -256,7 +278,6 @@ h1 {
     border-collapse: collapse;
     margin-top: 20px;
     margin-bottom: 30px;
-    overflow: hidden;
     background-color: rgba(18, 18, 18, 0.85);
 }
 
@@ -271,22 +292,6 @@ h1 {
     color: #121212 !important;
     font-weight: bold;
 }
-
-.badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #c5a059;
-    color: #121212;
-    padding: 4px 8px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    border-radius: 3px;
-}
-
-/* =========================================================
-   6. CONTACT & BOUTONS (VERT WHATSAPP & BOUTON ENVOYER)
-   ========================================================= */
 
 .contact-form-container, form, .form-container {
     max-width: 550px !important;
@@ -318,34 +323,8 @@ input, select, textarea {
     font-size: 0.95rem;
 }
 
-/* Style du bouton WhatsApp */
-.whatsapp-btn, 
-button[onclick*="whatsapp"], 
-a[href*="whatsapp"],
-.contact-info button {
-    background-color: #ffffff !important;
-    color: #ffffff !important;
-    border: none !important;
-    padding: 12px 20px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-block;
-    text-decoration: none;
-}
-
-.whatsapp-btn:hover, 
-button[onclick*="whatsapp"]:hover, 
-a[href*="whatsapp"]:hover {
-    background-color: #ffffff !important;
-    transform: scale(1.02);
-}
-
-/* Bouton Envoyer -> Vert au survol / clic */
-button[type="submit"], 
-input[type="submit"], 
-.btn-submit {
+/* Bouton Envoyer */
+button[type="submit"], input[type="submit"], .btn-submit {
     width: 100%;
     background-color: #25D366;
     color: #121212;
@@ -357,63 +336,9 @@ input[type="submit"],
     transition: all 0.3s ease;
 }
 
-button[type="submit"]:hover, 
-button[type="submit"]:active,
-input[type="submit"]:hover,
-input[type="submit"]:active,
-.btn-submit:hover,
-.btn-submit:active {
+button[type="submit"]:hover, input[type="submit"]:hover, .btn-submit:hover {
     background-color: #1eb954 !important;
     color: #ffffff !important;
-}
-
-/* =========================================================
-   STYLE DES CADRES PRODUITS EN BAS (COLLECTIONS & AUTRES)
-   ========================================================= */
-
-.product-grid, .collections-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-top: 25px;
-}
-
-.product-card, .card-product, .product-box {
-    background: rgba(18, 18, 18, 0.75);
-    border: 1.5px solid #8C6D2D;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: left;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    position: relative;
-}
-
-.product-card:hover, .card-product:hover, .product-box:hover {
-    transform: translateY(-5px);
-    border-color: #C5A059;
-}
-
-.product-card h3, .card-product h3, .product-box h3 {
-    color: #FFFFFF;
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-}
-
-.product-card h4, .card-product h4 {
-    color: #C5A059;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-}
-
-.product-card .price, .card-product .price, .product-box .price {
-    color: #C5A059;
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-top: 10px;
 }
 
 /* Placeholders pour images */
@@ -431,14 +356,9 @@ input[type="submit"]:active,
     margin-bottom: 15px;
 }
 
-.large-placeholder {
-    height: 280px;
-}
-
 /* =========================================================
-   7. FOOTER
+   6. FOOTER
    ========================================================= */
-
 footer {
     background-color: #121212;
     color: #ffffff;
@@ -449,74 +369,68 @@ footer {
     font-size: 0.9rem;
 }
 
-/* --- ADAPTATION MOBILE (RESPONSIVE) --- */
-@media (max-width: 768px) {
-  /* Aligner et réduire la taille des boutons du menu */
-  .navbar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    padding: 10px;
-  }
-
-  .navbar a, 
-  .navbar button {
-    font-size: 0.85rem;
-    padding: 8px 12px;
-  }
-
-  /* Ajouter du padding aux titres pour ne pas coller au bord de l'écran */
-  body, 
-  main, 
-  .container, 
-  h1, 
-  h2, 
-  p {
-    padding-left: 15px;
-    padding-right: 15px;
-    box-sizing: border-box;
-  }
-}
-
 /* =========================================================
-   BOUTON HAMBURGER FORCE (TAILLE MAXI ET VISIBLE)
+   7. ADAPTATION RESPONSIVE MOBILE & TABLETTE
    ========================================================= */
-.menu-toggle {
-    display: none;
-    flex-direction: column !important;
-    justify-content: space-around !important;
-    width: 50px !important;             /* Largeur bien grande */
-    height: 45px !important;            /* Hauteur confortable */
-    min-width: 50px !important;         /* Empêche le logo de l'écraser */
-    min-height: 45px !important;
-    background: #121212 !important;     /* Fond noir pour ressortir sur l'entête doré */
-    border: 2px solid #8C6D2D !important;/* Bordure dorée élégante */
-    border-radius: 8px !important;
-    cursor: pointer !important;
-    padding: 8px !important;
-    z-index: 1001 !important;
-    box-sizing: border-box !important;
-}
+@media (max-width: 768px) {
+    header.navbar, .navbar {
+        position: relative;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 12px 20px !important;
+    }
 
-.menu-toggle .bar {
-    height: 4px !important;             /* Épaisseur des traits */
-    width: 100% !important;
-    background-color: #C5A059 !important;/* Couleur dorée des barres */
-    border-radius: 3px !important;
-    transition: all 0.3s ease-in-out !important;
-    display: block !important;
-}
+    .menu-toggle {
+        display: flex !important;
+    }
 
-/* Animation en X au clic */
-.menu-toggle.open .bar:nth-child(1) {
-    transform: translateY(10px) rotate(45deg) !important;
-}
+    /* Déploiement du menu mobile sous la navbar */
+    .navbar nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #c5a059;
+        border-bottom: 3px solid #8c6d2d;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        padding: 20px 0;
+        z-index: 1000;
+    }
 
-.menu-toggle.open .bar:nth-child(2) {
-    opacity: 0 !important;
-}
+    .navbar nav.active {
+        display: block !important;
+    }
 
-.menu-toggle.open .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg) !important;
+    .navbar nav ul {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        padding: 0 20px !important;
+        margin: 0 !important;
+    }
+
+    .navbar nav ul li {
+        width: 100%;
+    }
+
+    .navbar nav ul li a {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        background-color: rgba(18, 18, 18, 0.08);
+    }
+
+    .hero {
+        margin: 15px 15px;
+        padding: 40px 15px;
+        min-height: 55vh;
+    }
+
+    .hero .btn, .btn-main {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
 }
