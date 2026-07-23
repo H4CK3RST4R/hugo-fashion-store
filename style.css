@@ -478,3 +478,95 @@ footer {
     box-sizing: border-box;
   }
 }
+
+/* =========================================================
+   8. ADAPTATION MOBILE (RESPONSIVE DESIGN CORRIGÉ)
+   ========================================================= */
+
+/* Sécurité anti-débordement global */
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+@media (max-width: 768px) {
+
+    /* --- 1. NAVBAR MOBILE --- */
+    header.navbar, .navbar {
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 15px 10px !important;
+        gap: 15px !important;
+    }
+
+    .navbar nav {
+        width: 100%;
+    }
+
+    /* Permet aux boutons du menu de s'aligner proprement en grilles/lignes fluides */
+    .navbar nav ul {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        width: 100% !important;
+    }
+
+    .navbar nav ul li {
+        flex: 1 1 auto; /* Ajuste la taille des boutons dynamiquement */
+        text-align: center;
+    }
+
+    .navbar nav ul li a, nav a {
+        width: 100%;
+        text-align: center;
+        font-size: 0.85rem !important;
+        padding: 8px 10px !important;
+        white-space: nowrap; /* Empêche le texte du bouton de se couper bizarrement */
+    }
+
+    /* --- 2. HERO SECTION --- */
+    .hero {
+        margin: 15px 10px !important;
+        padding: 40px 15px !important;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem !important;
+    }
+
+    .hero p {
+        font-size: 0.95rem !important;
+    }
+
+    /* --- 3. CONTENEURS ET GRILLES --- */
+    .container {
+        padding: 20px 10px !important;
+    }
+
+    /* Passage en 1 colonne sur petit écran pour éviter les écrasements */
+    .grid-3, .grid-2, .product-grid, .collections-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    /* --- 4. TABLEAUX (GUIDE DES TAILLES / PROMOTIONS) --- */
+    /* Empêche le tableau de déformer la page */
+    .data-table {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+    }
+
+    .data-table th, .data-table td {
+        padding: 8px 10px !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* --- 5. FORMULAIRES --- */
+    .contact-form-container, form, .form-container {
+        width: 100% !important;
+        padding: 15px !important;
+    }
+}
